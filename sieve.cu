@@ -7,7 +7,7 @@
 #include <pthread.h>
 #include <thread>
 
-#define GPUS 2
+#define GPUS 1
 #define BYTE unsigned char
 #define THREADS 64
 #define BLOCKS 256
@@ -280,7 +280,7 @@ cleanup:
 int main() {
     struct timeval tv1, tv2;
     gettimeofday(&tv1, NULL);
-    sieve(1e11);
+    sieve(1e10);
     gettimeofday(&tv2, NULL);
     printf("Total time = %f seconds\n", (double) (tv2.tv_usec - tv1.tv_usec) / 1000000 + (double) (tv2.tv_sec - tv1.tv_sec));
 }
